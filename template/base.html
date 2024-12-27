@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SGX Nifty</title>
+    <script>
+        setInterval(function() {
+            location.reload();
+        }, 1000); // Refresh every second
+    </script>
+</head>
+<body>
+    
+   
+   
+    <h1 class="text-primary text-center py-5">Gift Nifty Live Status</h1>
+
+    <table border="1">
+
+        <tr>
+            <th>Last Trade</th>
+            <th>Change</th>
+            <th>Live Status</th>
+            <th>Time</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.last_trade }}</td>
+            <td>{{ item.change }}</td>
+            <td>{{ item.change_percent }}</td>
+            <td>{{ item.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+     
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'static/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+    
+    <title>SGX Nifty</title>
+
+    <script>
+        setInterval(function() {
+            location.reload();
+        }, 1000); // Refresh every second
+    </script>
+</head>
+<body>
+
+    
+   
+   
+    <h1 class=" text-center py-5">Gift Nifty Live Status</h1>
+
+   <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-center">
+                <table class="table table-bordered table table-hover" >
+            
+                    <tr>
+                        <th>Last Trade</th>
+                        <th>Change</th>
+                        <th>Live Status</th>
+                        <th>Time</th>
+                    </tr>
+                    {% for item in data %}
+                    <tr>
+                        <td>{{ item.last_trade }}</td>
+                        <td>{{ item.change }}</td>
+                        <td>{{ item.change_percent }}</td>
+                        <td>{{ item.timestamp }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+               </div>
+            <div>
+    </div>
+   </div>
+     
+
+</body>
+</html>
